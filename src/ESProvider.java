@@ -1,13 +1,23 @@
-
 public class ESProvider {
-    protected FactParser factParser;
-    protected RuleRepository ruleRepository;
 
+	protected FactParser factParser;
+	protected RuleParser ruleParser;
 
-    public ESProvider(FactParser factParser, RuleRepository ruleRepository) {
-        this.factParser = factParser;
-        this.ruleRepository = ruleRepository;
+	public ESProvider(FactParser factParser, RuleParser ruleParser) {
 
-    }
+		this.factParser = factParser;
+		this.ruleParser = ruleParser;
+	}
 
+	public void collectAnswers() {
+
+	}
+
+	public boolean getAnswersByQuestions(String questionID) {
+		return false;
+	}
+
+	public String evaulate() {
+		return null;
+	}
 }
