@@ -1,16 +1,22 @@
 
 public class FactRepository {
-    class FactIterator implements Iterator {
-        private int currentIndex = 0;
-
+	public Iterator getIterator(){
+		return null;
+	}
+	public void addFact(Fact fact){
+		
+	}
+	
+    class FactIterator implements Iterator
+    {
         @Override
         public boolean hasNext() {
-            return currentIndex < currentSize && arrayList[currentIndex] != null;
+            return false;
         }
 
         @Override
         public Object next() {
-            return arrayList[currentIndex++];
+            return null;
         }
     }
 }
