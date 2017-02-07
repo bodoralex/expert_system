@@ -1,0 +1,66 @@
+<KM>
+    <Fact id="Kamov Ka-50 attack helicopter">
+        <Description>take over world with expensive helicopter</Description>
+        <Evals>
+            <Eval id="takeOverWorld">true</Eval>
+            <Eval id="lotOfMoney">true</Eval>
+            <Eval id="helisOrAirplanes">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="Lockheed Martin F-22 Raptor multi-role fighter jet">
+        <Description>take over world with expensive airplane</Description>
+        <Evals>
+            <Eval id="takeOverWorld">true</Eval>
+            <Eval id="lotOfMoney">true</Eval>
+            <Eval id="helisOrAirplanes">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="Mil Mi-8 light attack and troop transport helicopter">
+        <Description>take over world but low budget helicopter</Description>
+        <Evals>
+            <Eval id="takeOverWorld">true</Eval>
+            <Eval id="lotOfMoney">false</Eval>
+            <Eval id="helisOrAirplanes">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="Mikoyan Gurevich MiG-21 fighter jet">
+        <Description>take over world low budget plane</Description>
+        <Evals>
+            <Eval id="takeOverWorld">true</Eval>
+            <Eval id="lotOfMoney">false</Eval>
+            <Eval id="helisOrAirplanes">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="McDonall Douglas MD-530 passenger helicopter">
+        <Description>no take over world but lot of money and heli get a MD530</Description>
+        <Evals>
+            <Eval id="takeOverWorld">false</Eval>
+            <Eval id="lotOfMoney">true</Eval>
+            <Eval id="helisOrAirplanes">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="Diamond DA-42 twin-engine passenger plane">
+        <Description>do not take over world but want expensive airplane</Description>
+        <Evals>
+            <Eval id="takeOverWorld">false</Eval>
+            <Eval id="lotOfMoney">true</Eval>
+            <Eval id="helisOrAirplanes">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="Mil Mi-2 passenger helicopter">
+        <Description>no take over world no money helicopter</Description>
+        <Evals>
+            <Eval id="takeOverWorld">false</Eval>
+            <Eval id="lotOfMoney">false</Eval>
+            <Eval id="helisOrAirplanes">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="Cessna 172 single piston-engine passenger plane">
+        <Description>no take over world no money airplane</Description>
+        <Evals>
+            <Eval id="takeOverWorld">false</Eval>
+            <Eval id="lotOfMoney">false</Eval>
+            <Eval id="helisOrAirplanes">false</Eval>
+        </Evals>
+    </Fact>
+</KM>

@@ -9,14 +9,16 @@ public class FactRepository {
 	
     class FactIterator implements Iterator
     {
+        private int currentIndex = 0;
+
         @Override
         public boolean hasNext() {
-            return false;
+            return currentIndex < currentSize && arrayList[currentIndex] != null;
         }
 
         @Override
         public Object next() {
-            return null;
+            return arrayList[currentIndex++];
         }
     }
 }

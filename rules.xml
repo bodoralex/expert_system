@@ -1,0 +1,35 @@
+<Rules>
+    <Rule id="takeOverCountry">
+        <Question>Would you like to take over a country?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue>yes</SingleValue>
+            </Selection>
+            <Selection value="false">
+                <SingleValue>no</SingleValue>
+            </Selection>
+        </Answer>
+    </Rule>
+    <Rule id="lotOfMoney">
+        <Question>Do you have a lot of money?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue>yes</SingleValue>
+            </Selection>
+            <Selection value="false">
+                <SingleValue>no</SingleValue>
+            </Selection>
+        </Answer>
+    </Rule>
+    <Rule id="helisOrAirplanes">
+        <Question>Do you prefer helicopters or airplanes?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue>helis,helos,helicopters,choppers</MultipleValue>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue>airplanes,fighters,jets,bombers</MultipleValue>
+            </Selection>
+        </Answer>
+    </Rule>
+</Rules>

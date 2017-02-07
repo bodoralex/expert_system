@@ -1,3 +1,4 @@
 
-public class RuleParser {
+public class RuleParser extends XmlParser{
+
 }

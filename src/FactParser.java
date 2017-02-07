@@ -1,3 +1,4 @@
 
-public class FactParser {
+public class FactParser extends XmlParser{
+
 }
