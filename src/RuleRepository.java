@@ -1,14 +1,15 @@
 public class RuleRepository {
-    class QuestionIterator implements Iterator
-    {
+    class QuestionIterator implements Iterator {
+        private int currentIndex = 0;
+
         @Override
-        public boolean hasnext() {
-            return false;
+        public boolean hasNext() {
+            return currentIndex < currentSize && arrayList[currentIndex] != null;
         }
 
         @Override
         public Object next() {
-            return null;
+            return arrayList[currentIndex++];
         }
     }
 }

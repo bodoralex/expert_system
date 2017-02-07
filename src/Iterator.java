@@ -3,4 +3,5 @@ public interface Iterator {
 
 	Object next();
 
+
 }
