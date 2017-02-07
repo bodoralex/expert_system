@@ -1,5 +1,5 @@
 public interface Iterator {
-	boolean hasnext();
+	boolean hasNext();
 
 	Object next();
 
