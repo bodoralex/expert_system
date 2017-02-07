@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rules>
+  <Rule id="0">
+    <Question>Do you want to kill people?</Question>
+    <Answer>
+      <Selection value="true">
+        <SingleValue value="yes"></SingleValue>
+      </Selection>
+    </Answer>
+  </Rule>
+  
+  
+  
+  <Rule id="1">
+    <Question>str1234</Question>
+    <Answer>
+      <Selection value="str1234">
+        <SingleValue value="str1234">str1234</SingleValue>
+        <MultipleValue value="str1234">str1234</MultipleValue>
+      </Selection>
+    </Answer>
+  </Rule>
+  
+  
+  
+  <Rule id="2">
+    <Question>str1234</Question>
+    <Answer>
+      <Selection value="str1234">
+        <SingleValue value="str1234">str1234</SingleValue>
+        <MultipleValue value="str1234">str1234</MultipleValue>
+      </Selection>
+    </Answer>
+  </Rule>
+</Rules>
