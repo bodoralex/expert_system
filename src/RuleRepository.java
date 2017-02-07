@@ -1,8 +1,17 @@
 public class RuleRepository {
+	
+	public Question addQuestion(String id, Question question){
+		return question;
+	}
+	public Iterator getIterator(){
+		return null;
+	}
+	
+	
     class QuestionIterator implements Iterator
     {
         @Override
-        public boolean hasnext() {
+        public boolean hasNext() {
             return false;
         }
 
