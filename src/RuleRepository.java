@@ -1,34 +1,46 @@
+import java.util.*;
+
 public class RuleRepository {
 	// protected QuestionIterator questionIterator ;
+	LinkedHashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
 
 	public RuleRepository() {
 		// questionIterator = new QuestionIterator();
 		// The rulerepository constructor initializes the QuestionIterator
 		// inner class that implements the Iterator interface. With this
 		// we can iterate through the questions later.
+		QuestionIterator qi = getIterator();
+		while(qi.hasNext()){
+			Object element = qi.next();
+
+		}
 
 	}
 
 	public Question addQuestion(String id, Question question) {
-
+		ruleHashMap.put(id, question);
 		return question;
 	}
 
-	public Iterator getIterator() {
-		return null;
+	public QuestionIterator getIterator() {
+		return new QuestionIterator();
 	}
 
 	class QuestionIterator implements Iterator {
-		private int currentIndex = 0;
+		int currIndex = 0;
 
-		@Override
 		public boolean hasNext() {
-			return false;// currentIndex < currentSize && arrayList[currentIndex] != null;
+			if (currIndex < ruleHashMap.size()) {
+				return true;
+			}
+			return false;
 		}
 
-		@Override
 		public Object next() {
-			return null;// arrayList[currentIndex++];
+			if (this.hasNext()) {
+				return ruleHashMap.get();  //how to iterate between keys i dont know
+			}
+			return null;
 		}
 	}
 }

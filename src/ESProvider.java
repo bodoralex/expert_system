@@ -1,3 +1,6 @@
+import java.util.HashMap;
+
+
 public class ESProvider {
 
 	protected FactParser factParser;
@@ -29,7 +32,10 @@ public class ESProvider {
 		// The possible answer is defined in the xml file. Call the
 		// getEvaluateAnswer method with the given user input. If there
 		// is no exception store the returning value by question ID.
-
+		HashMap<String, String> mapOfAnswers = new HashMap<>();
+		if () {
+			mapOfAnswers.put()			//na igen itt elakadtam hogy pontosan hova mit kéne.
+		}
 	}
 
 	public boolean getAnswersByQuestions(String questionID) {

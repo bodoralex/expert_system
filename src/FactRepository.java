@@ -1,25 +1,39 @@
+import java.util.*;
 
 public class FactRepository {
-	public Iterator getIterator() {
-		return null;
-	}
+    LinkedHashSet<Fact> factHashSet = new LinkedHashSet<>();
 
-	public void addFact(Fact fact) {
+    public FactRepository() {
+        FactIterator fi = getIterator();
+        while (fi.hasNext()) {
+            Object element = fi.next();
+        }
+    }
 
-	}
+    public FactIterator getIterator() {
+        return new FactIterator();
+    }
 
-	class FactIterator implements Iterator {
-		private int currentIndex = 0;
+    public void addFact(Fact fact) {
+        factHashSet.add(fact);
+    }
 
-		@Override
-		public boolean hasNext() {
-			return false;// currentIndex < currentSize &&
-							// arrayList[currentIndex] != null;
-		}
+    class FactIterator implements Iterator {
+        private int currentIndex = 0;
 
-		@Override
-		public Object next() {
-			return null;// arrayList[currentIndex++];
-		}
-	}
+
+        public boolean hasNext() {
+            if (currentIndex < factHashSet.size()) {
+                return true;
+            }
+            return false;
+        }
+
+        public Object next() {
+            if (this.hasNext()) {
+                return factHashSet.iterator().next();
+            }
+            return null;
+        }
+    }
 }
