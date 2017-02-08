@@ -4,9 +4,33 @@
 //MultipleValue then we check the input in a range. if the input 
 //is not matched we throw an exception.
 
-public class Value {
-	public String[] getInputPattern() {
+public abstract class Value {
+	protected String trueAnswerPattern;
+	protected String falseAnswerPattern;
 
-		return null;
+	protected Value(String trueValue, String falseValue) {
+		trueAnswerPattern = trueValue;
+		falseAnswerPattern = falseValue;
 	}
+
+	public String[] getTrueInputPattern() {
+		String[] inputPatterns;
+		inputPatterns = trueAnswerPattern.split(",");
+		return inputPatterns;
+	}
+
+	public String[] getFalseInputPattern() {
+		String[] inputPatterns;
+		inputPatterns = falseAnswerPattern.split(",");
+		return inputPatterns;
+	}
+
+	public void setTrueValue(String value) {
+		this.trueAnswerPattern = value;
+	}
+
+	public void setFalseValue(String value) {
+		this.falseAnswerPattern = value;
+	}
+
 }

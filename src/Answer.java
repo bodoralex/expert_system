@@ -1,5 +1,6 @@
+import java.util.Scanner;
 
-//The answe has the responsibility to evaluate the answers by 
+//The answer has the responsibility to evaluate the answers by 
 //the given user input and the stored pattern in the stored value. 
 //If the value is SingleValue only then we check the input that 
 //is needed to be compared to the pattern. If the Value is 
@@ -7,12 +8,31 @@
 //is not matched we throw an exception.
 
 public class Answer {
-	public boolean evaluateAnswerbyImput(String input) {
-		return false;
+
+	protected Value value;
+
+	public boolean evaluateAnswerbyInput() throws Exception {
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next();
+		scanner.close();
+		boolean evaluated = false;
+
+		for (String acceptableTrue : value.getTrueInputPattern()) {
+			if (input.equals(acceptableTrue))
+				return true;
+		}
+		for (String acceptableFalse : value.getFalseInputPattern()) {
+			if (input.equals(acceptableFalse))
+				return false;
+		}
+		Exception e = new Exception();
+		
+		throw e;
+
 	}
 
 	public void addValue(Value value) {
-
+		this.value = value;
 	}
 
 }
