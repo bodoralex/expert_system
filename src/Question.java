@@ -20,3 +20,4 @@ public class Question {
 	}
 
 }
+//repóban legyenek a questionok 

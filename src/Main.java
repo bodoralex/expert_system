@@ -4,8 +4,12 @@ public class Main {
 		FactParser factParser = new FactParser(); // merkel
 		RuleParser ruleParser = new RuleParser(); // is
 
-		ESProvider eSProvider = new ESProvider(factParser, ruleParser);
+		//ESProvider eSProvider = new ESProvider(factParser, ruleParser);
 
-		XmlParser xmlParser = new XmlParser();
+		//XmlParser xmlParser = new XmlParser();
+		
+		///////
+		XmlParser.LoadXmlDocument("facts.xml");
+		
 	}
 }

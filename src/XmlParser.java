@@ -16,17 +16,18 @@ import java.util.Set;
 public abstract class XmlParser {
     String elementTagName="";
     String attribute ="";
-    public void LoadXmlDocument(String fullPath) {
+    public static void LoadXmlDocument(String fullPath) {
         try {
             File file = new File(fullPath);
             DocumentBuilderFactory dBF = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuild = dBF.newDocumentBuilder();
             Document doc = dBuild.parse(file);
             doc.getDocumentElement().normalize();
-            NodeList nodes = doc.getElementsByTagName(elementTagName);
+            NodeList nodes = doc.getElementsByTagName("Fact");
             for (int i = 0; i < nodes.getLength(); i++) {
                 Node node = nodes.item(i);
-                String name = node.getTextContent();
+                String name = ((Element) node).getAttribute("id");
+                System.out.println(name);
                 //Product product = createProduct(" ", name, price, 0);
                 //products.add(product);
             }
