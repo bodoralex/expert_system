@@ -15,7 +15,6 @@ public class Answer {
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.next();
 		scanner.close();
-		boolean evaluated = false;
 
 		for (String acceptableTrue : value.getTrueInputPattern()) {
 			if (input.equals(acceptableTrue))
