@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <KM>
     <Fact id="Kamov Ka-50 attack helicopter">
-        <Description>take over world with expensive helicopter</Description>
+        <Description>You should take over the world with a Kamov Ka-50 attack helicopter.</Description>
         <Evals>
             <Eval id="takeOverWorld">true</Eval>
             <Eval id="lotOfMoney">true</Eval>
@@ -9,7 +9,8 @@
         </Evals>
     </Fact>
     <Fact id="Lockheed Martin F-22 Raptor multi-role fighter jet">
-        <Description>take over world with expensive airplane</Description>
+        <Description>You sould take over the world with a Lockheed Martin F-22 Raptor multi-role fighter jet.
+        </Description>
         <Evals>
             <Eval id="takeOverWorld">true</Eval>
             <Eval id="lotOfMoney">true</Eval>
@@ -17,7 +18,8 @@
         </Evals>
     </Fact>
     <Fact id="Mil Mi-8 light attack and troop transport helicopter">
-        <Description>take over world but low budget helicopter</Description>
+        <Description>You should take over the world with a Mil Mi-8 light attack and troop transport helicopter.
+        </Description>
         <Evals>
             <Eval id="takeOverWorld">true</Eval>
             <Eval id="lotOfMoney">false</Eval>
@@ -25,7 +27,8 @@
         </Evals>
     </Fact>
     <Fact id="Mikoyan Gurevich MiG-21 fighter jet">
-        <Description>take over world low budget plane</Description>
+        <Description>you should take over the world with a low budget plane Mikoyan Gurevich MiG-21 fighter jet.
+        </Description>
         <Evals>
             <Eval id="takeOverWorld">true</Eval>
             <Eval id="lotOfMoney">false</Eval>
@@ -33,7 +36,7 @@
         </Evals>
     </Fact>
     <Fact id="McDonall Douglas MD-530 passenger helicopter">
-        <Description>no take over world but lot of money and heli get a MD530</Description>
+        <Description>You sould not take over world with a McDonall Douglas MD-530 passenger helicopter.</Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">true</Eval>
@@ -41,7 +44,9 @@
         </Evals>
     </Fact>
     <Fact id="Diamond DA-42 twin-engine passenger plane">
-        <Description>do not take over world but want expensive airplane</Description>
+        <Description>You should not take over world but want expensive airplane Diamond DA-42 twin-engine passenger
+            plane.
+        </Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">true</Eval>
@@ -49,7 +54,7 @@
         </Evals>
     </Fact>
     <Fact id="Mil Mi-2 passenger helicopter">
-        <Description>no take over world no money helicopter</Description>
+        <Description>You should do not take over world with a Mil Mi-2 passenger helicopter.</Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">false</Eval>
@@ -57,7 +62,8 @@
         </Evals>
     </Fact>
     <Fact id="Cessna 172 single piston-engine passenger plane">
-        <Description>no take over world no money airplane</Description>
+        <Description>You sould do not take over the world with a Cessna 172 single piston-engine passenger plane.
+        </Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">false</Eval>

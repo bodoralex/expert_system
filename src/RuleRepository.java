@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class RuleRepository {
@@ -26,10 +25,7 @@ public class RuleRepository {
         int currIndex = 0;
 
         public boolean hasNext() {
-            if (currIndex < ruleHashMap.size()) {
-                return true;
-            }
-            return false;
+            return currIndex < ruleHashMap.size();
         }
 
         public Question next() {
