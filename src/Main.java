@@ -15,13 +15,7 @@ public class Main {
 
 		
 
-		/*
-		Value value = new MultipleValue("yes", "no,nono");
-		Answer answer = new Answer();
-		Question question = new Question("anyád?");
-		answer.addValue(value);
-		question.setAnswerEvaluator(answer);
-		System.out.println(question.getEvaulatedAnswer());*/
+
 		
 	}
 }

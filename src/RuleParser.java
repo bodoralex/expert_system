@@ -31,8 +31,8 @@ public class RuleParser extends XmlParser {
 
     RuleRepository getRuleRepository()
     {
-        String filename = "";
-        LoadXmlDocument(filename);
+
+        LoadXmlDocument("rules.xml");
         RuleRepository repo = new RuleRepository();
         for(int i = 0; i < nodeList.getLength(); i++)
         {
@@ -41,10 +41,15 @@ public class RuleParser extends XmlParser {
             String id = ((Element)node).getAttribute("id");    // Rule id get!
             String questionMessage = ((Element) node).getElementsByTagName("Question").item(0).getTextContent();
             //Question textcontent GET!
-            Question question = new Question(questionMessage);
             String v1 = generateValue(node)[0];
             String v2 = generateValue(node)[1];//makes value from current iterated node
             Value value = new MultipleValue(v1,v2); //balra true value jobbra false
+            Answer answer = new Answer();
+            Question question = new Question(questionMessage);
+            answer.addValue(value);
+            question.setAnswerEvaluator(answer);
+            question.setId(id);
+
             repo.addQuestion(id, question); //question létrehozva a kiszedett rule id és question contentből
         }
         return repo;
