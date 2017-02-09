@@ -1,8 +1,8 @@
-public class Answer {
+class Answer {
 
-    protected Value value;
+    private Value value;
 
-    public boolean evaluateAnswerbyInput(String input) throws Exception {
+    boolean evaluateAnswerbyInput(String input) throws Exception {
         for (String acceptableTrue : value.getTrueInputPattern()) {
             if (input.equals(acceptableTrue))
                 return true;
@@ -11,12 +11,11 @@ public class Answer {
             if (input.equals(acceptableFalse))
                 return false;
         }
-        Exception e = new Exception();
-        throw e;
+        throw new Exception();
 
     }
 
-    public void addValue(Value value) {
+    void addValue(Value value) {
         this.value = value;
     }
 

@@ -1,29 +1,29 @@
-public class Question {
-    String question;
-    Answer answer;
+class Question {
+    private String question;
+    private Answer answer;
     private String id;
 
-    public Question(String question) {
+    Question(String question) {
         this.question = question;
     }
 
-    public String getQuestion() {
+    String getQuestion() {
         return question;
     }
 
-    public void setAnswerEvaluator(Answer answer) {
+    void setAnswerEvaluator(Answer answer) {
         this.answer = answer;
     }
 
-    public boolean getEvaulatedAnswer(String input) throws Exception {
+    boolean getEvaulatedAnswer(String input) throws Exception {
         return answer.evaluateAnswerbyInput(input);
     }
 
-    public String getId() {
+    String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    void setId(String id) {
         this.id = id;
     }
 

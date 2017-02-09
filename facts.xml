@@ -9,8 +9,7 @@
         </Evals>
     </Fact>
     <Fact id="Lockheed Martin F-22 Raptor multi-role fighter jet">
-        <Description>You sould take over the world with a Lockheed Martin F-22 Raptor multi-role fighter jet.
-        </Description>
+        <Description>You should take over the world with a Lockheed Martin F-22 Raptor multi-role fighter jet.</Description>
         <Evals>
             <Eval id="takeOverWorld">true</Eval>
             <Eval id="lotOfMoney">true</Eval>
@@ -18,8 +17,7 @@
         </Evals>
     </Fact>
     <Fact id="Mil Mi-8 light attack and troop transport helicopter">
-        <Description>You should take over the world with a Mil Mi-8 light attack and troop transport helicopter.
-        </Description>
+        <Description>You should take over the world with a Mil Mi-8 light attack and troop transport helicopter.</Description>
         <Evals>
             <Eval id="takeOverWorld">true</Eval>
             <Eval id="lotOfMoney">false</Eval>
@@ -27,8 +25,7 @@
         </Evals>
     </Fact>
     <Fact id="Mikoyan Gurevich MiG-21 fighter jet">
-        <Description>you should take over the world with a low budget plane Mikoyan Gurevich MiG-21 fighter jet.
-        </Description>
+        <Description>You should take over the world with a Mikoyan Gurevich MiG-21 fighter jet.</Description>
         <Evals>
             <Eval id="takeOverWorld">true</Eval>
             <Eval id="lotOfMoney">false</Eval>
@@ -36,7 +33,7 @@
         </Evals>
     </Fact>
     <Fact id="McDonall Douglas MD-530 passenger helicopter">
-        <Description>You sould not take over world with a McDonall Douglas MD-530 passenger helicopter.</Description>
+        <Description>You should get a McDonall Douglas MD-530 passenger helicopter.</Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">true</Eval>
@@ -44,9 +41,7 @@
         </Evals>
     </Fact>
     <Fact id="Diamond DA-42 twin-engine passenger plane">
-        <Description>You should not take over world but want expensive airplane Diamond DA-42 twin-engine passenger
-            plane.
-        </Description>
+        <Description>You should get a Diamond DA-42 twin-engine passenger plane.</Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">true</Eval>
@@ -54,7 +49,7 @@
         </Evals>
     </Fact>
     <Fact id="Mil Mi-2 passenger helicopter">
-        <Description>You should do not take over world with a Mil Mi-2 passenger helicopter.</Description>
+        <Description>You should get a Mil Mi-2 passenger helicopter.</Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">false</Eval>
@@ -62,8 +57,7 @@
         </Evals>
     </Fact>
     <Fact id="Cessna 172 single piston-engine passenger plane">
-        <Description>You sould do not take over the world with a Cessna 172 single piston-engine passenger plane.
-        </Description>
+        <Description>You get a Cessna 172 single piston-engine passenger plane.</Description>
         <Evals>
             <Eval id="takeOverWorld">false</Eval>
             <Eval id="lotOfMoney">false</Eval>

@@ -4,11 +4,11 @@ import java.util.Set;
 public class Fact {
 
 
-    public LinkedHashMap<String, Boolean> fact = new LinkedHashMap<>();
-    protected String description;
+    private LinkedHashMap<String, Boolean> fact = new LinkedHashMap<>();
+    String description;
 
 
-    public Fact(String description, LinkedHashMap<String, Boolean> fact) {
+    Fact(String description, LinkedHashMap<String, Boolean> fact) {
         this.description = description;
         this.fact = fact;
     }
@@ -17,11 +17,11 @@ public class Fact {
         fact.put(id, value);
     }
 
-    public Set<String> getIDSet() {
+    Set<String> getIDSet() {
         return fact.keySet();
     }
 
-    public boolean getValueByID(String id) {
+    boolean getValueByID(String id) {
         return fact.get(id);
     }
 

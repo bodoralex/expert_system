@@ -9,15 +9,13 @@ import java.io.File;
 
 
 public class RuleParser extends XmlParser {
-    NodeList nodeList;
+    private NodeList nodeList;
 
-    public static String[] generateValue(Node node) {
-        Node n = ((Element) node).getElementsByTagName("Answer").item(0);
+    private static String[] generateValue(Node node) {
         NodeList nl = ((Element) node).getElementsByTagName("Selection");
         Node a1 = nl.item(0), a2 = nl.item(1);
         String trueSelection = a1.getTextContent(), falseSelection = a2.getTextContent();
-        String[] trueAndFalse = {trueSelection, falseSelection};
-        return trueAndFalse;
+        return new String[]{trueSelection, falseSelection};
     }
 
     public void LoadXmlDocument(String fullPath) {

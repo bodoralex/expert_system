@@ -43,7 +43,7 @@ class ESProvider {
         return questionIDAnswers.get(questionID);
     }
 
-    String evaulate() {
+    String evaluate() {
         Fact w;
         FactRepository factRepository = factParser.getFactRepository();
         Iterator it = factRepository.getIterator();

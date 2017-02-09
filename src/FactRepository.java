@@ -1,10 +1,10 @@
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 
-public class FactRepository {
-    HashSet<Fact> factHashSet = new LinkedHashSet<>();
+class FactRepository {
+    private HashSet<Fact> factHashSet = new LinkedHashSet<>();
 
-    public FactRepository() {
+    FactRepository() {
         FactIterator fi = getIterator();
         while (fi.hasNext()) {
             Object element = fi.next();
@@ -15,7 +15,7 @@ public class FactRepository {
         return new FactIterator();
     }
 
-    public void addFact(Fact fact) {
+    void addFact(Fact fact) {
         factHashSet.add(fact);
     }
 

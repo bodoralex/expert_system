@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 
 public class FactParser extends XmlParser {
 
-    NodeList factElements;
+    private NodeList factElements;
 
     public void LoadXmlDocument(String fullPath) {
         try {
@@ -32,7 +32,6 @@ public class FactParser extends XmlParser {
         for (int i = 0; i < factElements.getLength(); i++) {
             Element factElement = (Element) factElements.item(i);
             Element descElement = (Element) factElement.getElementsByTagName("Description").item(0);
-            String factId = factElement.getAttribute("id");    // final return id get!
             String description = descElement.getTextContent();
             NodeList evalElements = factElement.getElementsByTagName("Eval");
             LinkedHashMap<String, Boolean> dictOfEvalElements = new LinkedHashMap<>();

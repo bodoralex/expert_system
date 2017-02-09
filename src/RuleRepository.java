@@ -1,27 +1,24 @@
 import java.util.LinkedHashMap;
 
-public class RuleRepository {
+class RuleRepository {
 
-    LinkedHashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
-    private QuestionIterator questionIterator;
+    private LinkedHashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
 
-    public RuleRepository() {
-        questionIterator = new QuestionIterator();
+    RuleRepository() {
+        QuestionIterator questionIterator = new QuestionIterator();
     }
 
 
-    public Question addQuestion(String id, Question question) {
+    Question addQuestion(String id, Question question) {
         ruleHashMap.put(id, question);
         return question;
     }
 
-    public QuestionIterator getIterator() {
-        QuestionIterator iterator = new QuestionIterator();
-        return iterator;
+    QuestionIterator getIterator() {
+        return new QuestionIterator();
     }
 
     class QuestionIterator implements Iterator {
-        public Object next;
         int currIndex = 0;
 
         public boolean hasNext() {
