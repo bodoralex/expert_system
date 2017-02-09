@@ -1,18 +1,13 @@
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.LinkedHashMap;
-import java.util.*;
 
 public class FactParser extends XmlParser {
-    // The parsed Facts added to the FactRepository by the FactParser.
-    // The Fact stores the id and values that is parsed. It can get back
-    // the ID set and the fixed value by an id.
 
     NodeList factElements;
 
@@ -40,18 +35,16 @@ public class FactParser extends XmlParser {
             String factId = factElement.getAttribute("id");    // final return id get!
             String description = descElement.getTextContent();
             NodeList evalElements = factElement.getElementsByTagName("Eval");
-            LinkedHashMap<String,Boolean> dictOfEvalElements = new LinkedHashMap<>();
+            LinkedHashMap<String, Boolean> dictOfEvalElements = new LinkedHashMap<>();
             for (int j = 0; j < evalElements.getLength(); j++) {
                 Element evalElement = (Element) evalElements.item(j);
-                dictOfEvalElements.put(evalElement.getAttribute("id"),Boolean.parseBoolean(evalElement.getTextContent()));
+                dictOfEvalElements.put(evalElement.getAttribute("id"), Boolean.parseBoolean(evalElement.getTextContent()));
             }
 
-        Fact fact = new Fact(description,dictOfEvalElements);
+            Fact fact = new Fact(description, dictOfEvalElements);
             factRepo.addFact(fact);
-            //System.out.println(fact);
         }
 
-        //System.out.println(Arrays.asList(factRepo.factHashSet));
         return factRepo;
     }
 }

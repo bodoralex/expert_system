@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class FactRepository {
     HashSet<Fact> factHashSet = new LinkedHashSet<>();
@@ -23,8 +24,8 @@ public class FactRepository {
 
 
         public boolean hasNext() {
-			return currentIndex < factHashSet.size();
-		}
+            return currentIndex < factHashSet.size();
+        }
 
         public Fact next() {
             if (this.hasNext()) return factHashSet.toArray(new Fact[0])[currentIndex++];

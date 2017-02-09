@@ -4,30 +4,29 @@ import java.util.Set;
 
 public class Fact {
 
-	
-	protected String description;
 
-	public HashMap<String, Boolean> fact = new LinkedHashMap<>();
-	
-	
-	public Fact(String description, LinkedHashMap<String, Boolean> fact) {
-		this.description = description;
-		this.fact = fact;
-	}
+    public HashMap<String, Boolean> fact = new LinkedHashMap<>();
+    protected String description;
 
-	public void setFactValueByID(String id, boolean value) {
-		fact.put(id, value);
-	}
 
-	public Set<String> getIDSet() {
-		return fact.keySet();
-	}
+    public Fact(String description, LinkedHashMap<String, Boolean> fact) {
+        this.description = description;
+        this.fact = fact;
+    }
 
-	public boolean getValueByID(String id) {
-		return fact.get(id);
-	}
+    public void setFactValueByID(String id, boolean value) {
+        fact.put(id, value);
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public Set<String> getIDSet() {
+        return fact.keySet();
+    }
+
+    public boolean getValueByID(String id) {
+        return fact.get(id);
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }
