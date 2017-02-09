@@ -9,14 +9,12 @@ public class Main {
 		//System.out.println("the answer is: "+ eSProvider.evaulate());
 		
 		
-		//XmlParser xmlParser = new XmlParser();
+	factParser.LoadXmlDocument("facts.xml");
+	ruleParser.LoadXmlDocument("rules.xml");
 		
+
 		
-		//RuleParser ruleParser & new RuleParser();
-		
-		
-		//XmlParser.LoadXmlDocument("facts.xml");
-		
+
 		/*
 		Value value = new MultipleValue("yes", "no,nono");
 		Answer answer = new Answer();
