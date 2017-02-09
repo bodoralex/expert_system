@@ -39,16 +39,17 @@ public class FactParser extends XmlParser {
             String factId = factElement.getAttribute("id");    // final return id get!
             String description = descElement.getTextContent();
             NodeList evalElements = factElement.getElementsByTagName("Eval");
-            LinkedHashMap<String[],Boolean> dictOfEvalElements = new LinkedHashMap<>();
+            LinkedHashMap<String,Boolean> dictOfEvalElements = new LinkedHashMap<>();
             for (int j = 0; j < evalElements.getLength(); j++) {
                 Element evalElement = (Element) evalElements.item(j);
-                String[] evalElementFirst = new String[evalElements.getLength()];
-                evalElementFirst[j] = evalElement.getAttribute("id");
-                dictOfEvalElements.put(evalElementFirst,Boolean.parseBoolean(evalElement.getTextContent()));
+                dictOfEvalElements.put(evalElement.getAttribute("id"),Boolean.parseBoolean(evalElement.getTextContent()));
             }
 
+
+        Fact fact = new Fact(description,dictOfEvalElements);
+            factRepo.addFact(fact);
         }
-        return repo;
+        return factRepo;
     }
 }
 

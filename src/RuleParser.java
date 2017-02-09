@@ -52,6 +52,7 @@ public class RuleParser extends XmlParser {
 
             repo.addQuestion(id, question); //question létrehozva a kiszedett rule id és question contentből
         }
+
         return repo;
     }
     public static String[] generateValue(Node node){
