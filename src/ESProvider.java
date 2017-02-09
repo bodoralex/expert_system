@@ -1,5 +1,8 @@
 import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Set;
 
+import javax.sound.midi.Soundbank;
 
 public class ESProvider {
 
@@ -7,11 +10,13 @@ public class ESProvider {
 	protected RuleParser ruleParser;
 	// protected FactRepository factRepository;
 	// protected RuleRepository ruleRepository;
+	protected HashMap<String, Boolean> questionIDAnswers;
 
 	public ESProvider(FactParser factParser, RuleParser ruleParser) {
 
 		this.factParser = factParser;
 		this.ruleParser = ruleParser;
+		questionIDAnswers = new HashMap();
 		/*
 		 * factRepository = factParser.getFactRepository(); ruleRepository =
 		 * ruleParser.getRuleRepository();
@@ -33,21 +38,52 @@ public class ESProvider {
 		// getEvaluateAnswer method with the given user input. If there
 		// is no exception store the returning value by question ID.
 		HashMap<String, String> mapOfAnswers = new HashMap<>();
-		if () {
-			mapOfAnswers.put()			//na igen itt elakadtam hogy pontosan hova mit kéne.
+		RuleRepository pp = ruleParser.getRuleRepository();
+		Iterator it = pp.getIterator();
+		boolean exceptionRaised = false;
+		while (it.hasNext()) {
+			Question q = (Question) it.next();
+			System.out.println(q.getQuestion());
+			Scanner scanner = new Scanner(System.in);
+			String input = scanner.next();
+			boolean answer;
+			while (!exceptionRaised) {
+				try {
+					answer = q.getEvaulatedAnswer(input);
+					questionIDAnswers.put(q.getId(), answer);
+					exceptionRaised = true;
+				} catch (Exception e) {
+					exceptionRaised = true;
+					System.out.println("Wrong input!");
+				}
+
+			}
+
 		}
 	}
 
 	public boolean getAnswersByQuestions(String questionID) {
-		return false;
+		return questionIDAnswers.get(questionID);
 	}
 
 	public String evaulate() {
-		/*
-		 * If we call the evaluate method of the ESProvider then it iterates
-		 * through the Facts and checks the possible matches. If it find the
-		 * answer it returns the description of the Fact otherwise null. If the
-		 * return value is null the answer could not be expertedd. "A vegso FOR"
-		 */ return null;
+		FactRepository fp = factParser.getFactRepository();
+		Iterator it = fp.getIterator();
+		while (it.hasNext()) {
+			Fact f = (Fact) it.next();
+			//boolean end = false;
+			//while(end){
+				Set <String> s = f.getIDSet();
+				for (String string : s) {
+					boolean factExpextation = f.getValueByID(string);
+					boolean a = getAnswersByQuestions(string);
+					if(factExpextation != a){
+						break;
+					}
+				}
+				return f.getDescription();
+			//}
+		}
+		return null;
 	}
 }

@@ -32,7 +32,8 @@ public class RuleParser extends XmlParser {
         }
 
     }
-   /* public RuleRepository getRuleRepository() {
-        NodeList nodes = doc.getElementsByTagName("");
-    */
+    
+    public RuleRepository getRuleRepository() {
+        return null;
+    
 }

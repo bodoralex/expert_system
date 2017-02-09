@@ -1,7 +1,9 @@
 import java.util.*;
 
 public class RuleRepository {
-	// protected QuestionIterator questionIterator ;
+	
+	private QuestionIterator questionIterator;
+	
 	LinkedHashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
 
 	public RuleRepository() {
@@ -9,6 +11,7 @@ public class RuleRepository {
 		// The rulerepository constructor initializes the QuestionIterator
 		// inner class that implements the Iterator interface. With this
 		// we can iterate through the questions later.
+		this.questionIterator = new QuestionIterator();
 		QuestionIterator qi = getIterator();
 		while(qi.hasNext()){
 			Object element = qi.next();
@@ -16,6 +19,7 @@ public class RuleRepository {
 		}
 
 	}
+	
 
 	public Question addQuestion(String id, Question question) {
 		ruleHashMap.put(id, question);
@@ -23,11 +27,12 @@ public class RuleRepository {
 	}
 
 	public QuestionIterator getIterator() {
-		return new QuestionIterator();
+		return questionIterator;
 	}
 
 	class QuestionIterator implements Iterator {
 		int currIndex = 0;
+		public Object next;
 
 		public boolean hasNext() {
 			if (currIndex < ruleHashMap.size()) {

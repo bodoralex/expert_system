@@ -3,7 +3,8 @@
 public class Question {
 	String question;
 	Answer answer;
-
+	private String id;
+	
 	public Question(String question) {
 		this.question = question;
 	}
@@ -16,8 +17,16 @@ public class Question {
 		this.answer = answer;
 	}
 
-	public boolean getEvaulatedAnswer() throws Exception {
-		return answer.evaluateAnswerbyInput();
+	public boolean getEvaulatedAnswer(String input) throws Exception {
+		return answer.evaluateAnswerbyInput(input);
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

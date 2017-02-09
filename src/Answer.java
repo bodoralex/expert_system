@@ -11,10 +11,8 @@ public class Answer {
 
 	protected Value value;
 
-	public boolean evaluateAnswerbyInput() throws Exception {
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.next();
-		scanner.close();
+	public boolean evaluateAnswerbyInput(String input) throws Exception {
+
 
 		for (String acceptableTrue : value.getTrueInputPattern()) {
 			if (input.equals(acceptableTrue))
@@ -25,7 +23,7 @@ public class Answer {
 				return false;
 		}
 		Exception e = new Exception();
-		
+
 		throw e;
 
 	}

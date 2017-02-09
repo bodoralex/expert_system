@@ -16,8 +16,8 @@ public class Fact {
 		return null;
 	}
 
-	public boolean getValueByID() {
-		return false;
+	public boolean getValueByID(String string) {
+		return true;
 	}
 
 	public String getDescription() {
