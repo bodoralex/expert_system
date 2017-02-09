@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
@@ -40,25 +41,53 @@ class ESProvider {
     }
 
     public boolean getAnswerByQuestion(String questionID) {
-        System.out.println(questionIDAnswers.get(questionID));
         return questionIDAnswers.get(questionID);
     }
 
     public String evaulate() {
-        FactRepository fp = factParser.getFactRepository();
-        Iterator it = fp.getIterator();
+        Fact w;
+        FactRepository factRepository = factParser.getFactRepository();
+        Iterator it = factRepository.getIterator();
+        while(it.hasNext()){
+            Fact f = (Fact) it.next();
+            w = f;
+            Set<String> idSet = f.getIDSet();
+            boolean ccc = true;
+            for (String string : idSet) {
+                Boolean factExpectation = f.getValueByID(string);
+                System.out.println(factExpectation);
+                Boolean a = getAnswerByQuestion(string);
+                System.out.println(a);
+                if (!factExpectation.equals(a)) {
+                    ccc = false;
+                }
+
+            }
+            if(ccc) return w.description;
+            w.i
+        }
+        //return f.getDescription();
+        return null;
+    }
+    /*public String evaulate() {
+        FactRepository factRepository = factParser.getFactRepository();
+        Iterator it = factRepository.getIterator();
+        System.out.println(Arrays.asList(factRepository.factHashSet.toArray()[3].));
         while (it.hasNext()) {
             Fact f = (Fact) it.next();
+            ;
             Set<String> idSet = f.getIDSet();
             for (String string : idSet) {
-                boolean factExpectation = f.getValueByID(string);
-                boolean a = getAnswerByQuestion(string);
-                if (factExpectation != a) {
+                Boolean factExpectation = f.getValueByID(string);
+                Boolean a = getAnswerByQuestion(string);
+
+                if (!factExpectation.equals(a)) {
                     break;
                 }
             }
             return f.getDescription();
         }
         return null;
-    }
+    }*/
+
 }

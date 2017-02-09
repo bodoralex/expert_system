@@ -3,7 +3,7 @@ import java.util.LinkedHashMap;
 
 public class RuleRepository {
 
-    HashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
+    LinkedHashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
     private QuestionIterator questionIterator;
 
     public RuleRepository() {

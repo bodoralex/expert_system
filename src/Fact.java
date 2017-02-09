@@ -5,7 +5,7 @@ import java.util.Set;
 public class Fact {
 
 
-    public HashMap<String, Boolean> fact = new LinkedHashMap<>();
+    public LinkedHashMap<String, Boolean> fact = new LinkedHashMap<>();
     protected String description;
 
 
