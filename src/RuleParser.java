@@ -6,13 +6,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 public class RuleParser extends XmlParser {
-	// The RuleParser adds the wuestions with id to the
-	// RuleRepository instance. This is stored in a map
-	// inside the RuleRepository.
 
-	/*
-	 * public void LoadXmlDocument(String fullPath) { elementTagName = "Rule";
-	 */
 	public void LoadXmlDocument(String fullPath) {
 		try {
 			File file = new File(fullPath);
@@ -38,13 +32,22 @@ public class RuleParser extends XmlParser {
 
 	public RuleRepository getRuleRepository() {
 		RuleRepository rr = new RuleRepository();
-		Value value = new MultipleValue("yes", "no,nono");
+		Value value = new MultipleValue("yes,y", "no,nono");
 		Answer answer = new Answer();
-		Question question = new Question("kérdés?");
+		Question question = new Question("kérdés0?");
 		answer.addValue(value);
 		question.setAnswerEvaluator(answer);
-		rr.addQuestion("0", question);
-		rr.addQuestion("1", question);
+		question.setId("0");
+		rr.addQuestion(question.getId(), question);
+		
+		
+		Value value2 = new MultipleValue("yes,y", "no,nono");
+		Answer answer2 = new Answer();
+		Question question2 = new Question("kérdés2?");
+		answer2.addValue(value2);
+		question2.setAnswerEvaluator(answer2);
+		question2.setId("2");
+		rr.addQuestion(question2.getId(), question2);
 
 		return rr;
 
