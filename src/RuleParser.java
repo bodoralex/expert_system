@@ -5,50 +5,56 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import java.io.File;
 
+
 public class RuleParser extends XmlParser {
-	// The RuleParser adds the wuestions with id to the
-	// RuleRepository instance. This is stored in a map
-	// inside the RuleRepository.
+    // The RuleParser adds the wuestions with id to the
+    // RuleRepository instance. This is stored in a map
+    // inside the RuleRepository.
 
-	/*
-	 * public void LoadXmlDocument(String fullPath) { elementTagName = "Rule";
-	 */
-	public void LoadXmlDocument(String fullPath) {
-		try {
-			File file = new File(fullPath);
-			DocumentBuilderFactory dBF = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuild = dBF.newDocumentBuilder();
-			Document doc = dBuild.parse(file);
-			doc.getDocumentElement().normalize();
-			NodeList nodes = doc.getElementsByTagName("Rule");
-			
-			RuleRepository rr = new RuleRepository();
-			
-			for (int i = 0; i < nodes.getLength(); i++) {
-				Node node = nodes.item(i);
-				String name = ((Element) node).getAttribute("id");
-				System.out.println(name);// itt majd fel kell tölteni egy
-											// hashMapet
-			}
-		} catch (Exception e) {
-			System.out.println("Generic exception message in RuleParser");
-		}
+    /*  public void LoadXmlDocument(String fullPath) {
+          elementTagName = "Rule";
+  */
+        NodeList nodeList;
+    public void LoadXmlDocument(String fullPath) {
+        try {
+            File file = new File(fullPath);
+            DocumentBuilderFactory dBF = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuild = dBF.newDocumentBuilder();
+            Document doc = dBuild.parse(file);
+            doc.getDocumentElement().normalize();
+            nodeList = doc.getElementsByTagName("Rule");
+        } catch (Exception e) {
+            System.out.println("Generic exception message in RuleParser");
+        }
 
-	}
+    }
 
-	public RuleRepository getRuleRepository() {
-		RuleRepository rr = new RuleRepository();
-		Value value = new MultipleValue("yes", "no,nono");
-		Answer answer = new Answer();
-		Question question = new Question("kérdés?");
-		answer.addValue(value);
-		question.setAnswerEvaluator(answer);
-		rr.addQuestion("0", question);
-		rr.addQuestion("1", question);
+    RuleRepository getRuleRepository()
+    {
+        String filename = "";
+        LoadXmlDocument(filename);
+        RuleRepository repo = new RuleRepository();
+        for(int i = 0; i < nodeList.getLength(); i++)
+        {
+            Node node = nodeList.item(i);
 
-		return rr;
-
-	}
-	
-
+            String id = ((Element)node).getAttribute("id");    // Rule id get!
+            String questionMessage = ((Element) node).getElementsByTagName("Question").item(0).getTextContent();
+            //Question textcontent GET!
+            Question question = new Question(questionMessage);
+            String v1 = generateValue(node)[0];
+            String v2 = generateValue(node)[1];//makes value from current iterated node
+            Value value = new MultipleValue(v1,v2); //balra true value jobbra false
+            repo.addQuestion(id, question); //question létrehozva a kiszedett rule id és question contentből
+        }
+        return repo;
+    }
+    public static String[] generateValue(Node node){
+        Node n = ((Element)node).getElementsByTagName("Answer").item(0); //NODE, NEM NODELIST azért 0
+        NodeList nl = ((Element)node).getElementsByTagName("Selection"); // selectionök megvanak, ez LISTA, ezért nem 0
+        Node a1=nl.item(0),a2=nl.item(1);
+        String trueSelection = a1.getTextContent(),falseSelection = a2.getTextContent(); //a1 true, a2 false válasz
+        String[] trueAndFalse = {trueSelection,falseSelection};
+        return trueAndFalse;
+    }
 }

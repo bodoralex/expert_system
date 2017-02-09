@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class FactRepository {
-    LinkedHashSet<Fact> factHashSet = new LinkedHashSet<>();
+    HashSet<Fact> factHashSet = new LinkedHashSet<>();
 
     public FactRepository() {
         FactIterator fi = getIterator();
@@ -10,7 +10,7 @@ public class FactRepository {
         }
     }
 
-    public FactIterator getIterator() {
+    FactIterator getIterator() {
         return new FactIterator();
     }
 
@@ -23,16 +23,11 @@ public class FactRepository {
 
 
         public boolean hasNext() {
-            if (currentIndex < factHashSet.size()) {
-                return true;
-            }
-            return false;
-        }
+			return currentIndex < factHashSet.size();
+		}
 
-        public Object next() {
-            if (this.hasNext()) {
-                return factHashSet.iterator().next();
-            }
+        public Fact next() {
+            if (this.hasNext()) return factHashSet.toArray(new Fact[0])[currentIndex++];
             return null;
         }
     }
