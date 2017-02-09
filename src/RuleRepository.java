@@ -4,19 +4,20 @@ public class RuleRepository {
 	
 	private QuestionIterator questionIterator;
 	
-	LinkedHashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
+	HashMap<String, Question> ruleHashMap = new LinkedHashMap<>();
 
 	public RuleRepository() {
-		// questionIterator = new QuestionIterator();
 		// The rulerepository constructor initializes the QuestionIterator
 		// inner class that implements the Iterator interface. With this
 		// we can iterate through the questions later.
-		this.questionIterator = new QuestionIterator();
-		QuestionIterator qi = getIterator();
+		
+		
+		questionIterator = new QuestionIterator();
+		/*QuestionIterator qi = getIterator();
 		while(qi.hasNext()){
 			Object element = qi.next();
 
-		}
+		}*/
 
 	}
 	
@@ -27,7 +28,8 @@ public class RuleRepository {
 	}
 
 	public QuestionIterator getIterator() {
-		return questionIterator;
+		QuestionIterator iterator = new QuestionIterator();
+		return iterator;
 	}
 
 	class QuestionIterator implements Iterator {
@@ -41,9 +43,9 @@ public class RuleRepository {
 			return false;
 		}
 
-		public Object next() {
+		public Question next() {
 			if (this.hasNext()) {
-				return ruleHashMap.get();  //how to iterate between keys i dont know
+				return ruleHashMap.values().toArray(new Question[0])[currIndex++];  //how to iterate between keys i dont know
 			}
 			return null;
 		}

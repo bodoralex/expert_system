@@ -1,10 +1,8 @@
-
-//Every question has an Answer and every Answer can have more than one Value.
 public class Question {
 	String question;
 	Answer answer;
 	private String id;
-	
+
 	public Question(String question) {
 		this.question = question;
 	}
@@ -30,4 +28,4 @@ public class Question {
 	}
 
 }
-//repóban legyenek a questionok 
+// repóban legyenek a questionok

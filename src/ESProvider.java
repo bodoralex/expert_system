@@ -38,8 +38,8 @@ public class ESProvider {
 		// getEvaluateAnswer method with the given user input. If there
 		// is no exception store the returning value by question ID.
 		HashMap<String, String> mapOfAnswers = new HashMap<>();
-		RuleRepository pp = ruleParser.getRuleRepository();
-		Iterator it = pp.getIterator();
+		RuleRepository rR = ruleParser.getRuleRepository();
+		Iterator it = rR.getIterator();
 		boolean exceptionRaised = false;
 		while (it.hasNext()) {
 			Question q = (Question) it.next();
@@ -56,9 +56,7 @@ public class ESProvider {
 					exceptionRaised = true;
 					System.out.println("Wrong input!");
 				}
-
 			}
-
 		}
 	}
 

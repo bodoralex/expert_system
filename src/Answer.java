@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 //The answer has the responsibility to evaluate the answers by 
 //the given user input and the stored pattern in the stored value. 
 //If the value is SingleValue only then we check the input that 
@@ -12,8 +10,6 @@ public class Answer {
 	protected Value value;
 
 	public boolean evaluateAnswerbyInput(String input) throws Exception {
-
-
 		for (String acceptableTrue : value.getTrueInputPattern()) {
 			if (input.equals(acceptableTrue))
 				return true;
@@ -23,7 +19,6 @@ public class Answer {
 				return false;
 		}
 		Exception e = new Exception();
-
 		throw e;
 
 	}

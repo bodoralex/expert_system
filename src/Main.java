@@ -6,7 +6,7 @@ public class Main {
 
 		ESProvider eSProvider = new ESProvider(factParser, ruleParser);
 		eSProvider.collectAnswers();
-		System.out.println("the answer is: "+ eSProvider.evaulate());
+		//System.out.println("the answer is: "+ eSProvider.evaulate());
 		
 		
 		//XmlParser xmlParser = new XmlParser();
