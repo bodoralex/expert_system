@@ -1,26 +1,33 @@
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Set;
 
 public class Fact {
-	// The fact can get back the ID set and the fixed value for by an id.
+
+	
 	protected String description;
 
-	public Fact(String description) {
+	protected HashMap<String, Boolean> fact = new LinkedHashMap<>();
+	
+	
+	public Fact(String description, LinkedHashMap<String, Boolean> fact) {
 		this.description = description;
+		this.fact = fact;
 	}
 
-	public void setFactValueByID(String in, boolean value) {
-
+	public void setFactValueByID(String id, boolean value) {
+		fact.put(id, value);
 	}
 
 	public Set<String> getIDSet() {
-		return null;
+		return fact.keySet();
 	}
 
-	public boolean getValueByID(String string) {
-		return true;
+	public boolean getValueByID(String id) {
+		return fact.get(id);
 	}
 
 	public String getDescription() {
-		return null;
+		return description;
 	}
 }

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
@@ -16,7 +18,6 @@ public class ESProvider {
 
 		this.factParser = factParser;
 		this.ruleParser = ruleParser;
-		questionIDAnswers = new HashMap();
 		/*
 		 * factRepository = factParser.getFactRepository(); ruleRepository =
 		 * ruleParser.getRuleRepository();
@@ -37,27 +38,28 @@ public class ESProvider {
 		// The possible answer is defined in the xml file. Call the
 		// getEvaluateAnswer method with the given user input. If there
 		// is no exception store the returning value by question ID.
-		HashMap<String, String> mapOfAnswers = new HashMap<>();
+		questionIDAnswers = new HashMap<>();
 		RuleRepository rR = ruleParser.getRuleRepository();
 		Iterator it = rR.getIterator();
-		boolean exceptionRaised = false;
 		while (it.hasNext()) {
+			boolean exceptionRaised = false;
 			Question q = (Question) it.next();
 			System.out.println(q.getQuestion());
 			Scanner scanner = new Scanner(System.in);
-			String input = scanner.next();
 			boolean answer;
 			while (!exceptionRaised) {
 				try {
+					String input = scanner.next();
 					answer = q.getEvaulatedAnswer(input);
 					questionIDAnswers.put(q.getId(), answer);
 					exceptionRaised = true;
 				} catch (Exception e) {
-					exceptionRaised = true;
 					System.out.println("Wrong input!");
+					exceptionRaised = false;
 				}
 			}
 		}
+		System.out.println("I have no more questions.");
 	}
 
 	public boolean getAnswersByQuestions(String questionID) {
@@ -71,8 +73,8 @@ public class ESProvider {
 			Fact f = (Fact) it.next();
 			//boolean end = false;
 			//while(end){
-				Set <String> s = f.getIDSet();
-				for (String string : s) {
+				Set <String> idSet = f.getIDSet();
+				for (String string : idSet) {
 					boolean factExpextation = f.getValueByID(string);
 					boolean a = getAnswersByQuestions(string);
 					if(factExpextation != a){
