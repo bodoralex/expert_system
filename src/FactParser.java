@@ -7,6 +7,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.LinkedHashMap;
+import java.util.*;
 
 public class FactParser extends XmlParser {
     // The parsed Facts added to the FactRepository by the FactParser.
@@ -45,10 +46,12 @@ public class FactParser extends XmlParser {
                 dictOfEvalElements.put(evalElement.getAttribute("id"),Boolean.parseBoolean(evalElement.getTextContent()));
             }
 
-
         Fact fact = new Fact(description,dictOfEvalElements);
             factRepo.addFact(fact);
+            //System.out.println(fact);
         }
+
+        //System.out.println(Arrays.asList(factRepo.factHashSet));
         return factRepo;
     }
 }

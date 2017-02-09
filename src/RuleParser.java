@@ -43,7 +43,7 @@ public class RuleParser extends XmlParser {
             //Question textcontent GET!
             String v1 = generateValue(node)[0];
             String v2 = generateValue(node)[1];//makes value from current iterated node
-            Value value = new MultipleValue(v1,v2); //balra true value jobbra false
+            MultipleValue value = new MultipleValue(v1.trim(),v2.trim()); //balra true value jobbra false
             Answer answer = new Answer();
             Question question = new Question(questionMessage);
             answer.addValue(value);

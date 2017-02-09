@@ -6,11 +6,10 @@ public class Main {
 
 		ESProvider eSProvider = new ESProvider(factParser, ruleParser);
 		eSProvider.collectAnswers();
-		//System.out.println("the answer is: "+ eSProvider.evaulate());
+		System.out.println(eSProvider.evaulate());
 		
-		
-	factParser.LoadXmlDocument("facts.xml");
-	ruleParser.LoadXmlDocument("rules.xml");
+		//factParser.LoadXmlDocument("facts.xml");
+		//ruleParser.LoadXmlDocument("rules.xml");
 		
 
 		

@@ -1,10 +1,9 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
-
-import javax.sound.midi.Soundbank;
 
 public class ESProvider {
 
@@ -21,11 +20,11 @@ public class ESProvider {
 		/*
 		 * factRepository = factParser.getFactRepository(); ruleRepository =
 		 * ruleParser.getRuleRepository();
-		 * 
+		 *
 		 * The in the ESProvider constructor we store the FactRepository
 		 * instance that returned by calling the getFactRepository method of the
 		 * FactParser.
-		 * 
+		 *
 		 * In the constructor we call the getRuleRepository method and we store
 		 * the returned RuleRepository instance.
 		 */ }
@@ -62,7 +61,11 @@ public class ESProvider {
 		System.out.println("I have no more questions.");
 	}
 
-	public boolean getAnswersByQuestions(String questionID) {
+	public boolean getAnswerByQuestion(String questionID) {
+		//System.out.println(questionID);
+		//System.out.println(questionIDAnswers.get(questionID));
+		//System.out.println(Arrays.asList(questionIDAnswers));
+		System.out.println(questionIDAnswers.get(questionID));
 		return questionIDAnswers.get(questionID);
 	}
 
@@ -76,7 +79,7 @@ public class ESProvider {
 				Set <String> idSet = f.getIDSet();
 				for (String string : idSet) {
 					boolean factExpextation = f.getValueByID(string);
-					boolean a = getAnswersByQuestions(string);
+					boolean a = getAnswerByQuestion(string);
 					if(factExpextation != a){
 						break;
 					}

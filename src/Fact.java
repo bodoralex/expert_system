@@ -7,7 +7,7 @@ public class Fact {
 	
 	protected String description;
 
-	protected HashMap<String, Boolean> fact = new LinkedHashMap<>();
+	public HashMap<String, Boolean> fact = new LinkedHashMap<>();
 	
 	
 	public Fact(String description, LinkedHashMap<String, Boolean> fact) {

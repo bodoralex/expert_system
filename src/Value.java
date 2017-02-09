@@ -1,7 +1,7 @@
 
 public abstract class Value {
-	protected String trueAnswerPattern;
-	protected String falseAnswerPattern;
+	private String trueAnswerPattern;
+	private String falseAnswerPattern;
 
 	protected Value(String trueValue, String falseValue) {
 		trueAnswerPattern = trueValue;
