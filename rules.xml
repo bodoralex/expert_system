@@ -4,10 +4,10 @@
         <Question>Would you like to take over the world?</Question>
         <Answer>
             <Selection value="true">
-                <SingleValue>yes</SingleValue>
+                <SingleValue>yes,y</SingleValue>
             </Selection>
             <Selection value="false">
-                <SingleValue>no</SingleValue>
+                <SingleValue>no,n</SingleValue>
             </Selection>
         </Answer>
     </Rule>
@@ -15,10 +15,10 @@
         <Question>Do you have a lot of money?</Question>
         <Answer>
             <Selection value="true">
-                <SingleValue>yes</SingleValue>
+                <SingleValue>yes,y</SingleValue>
             </Selection>
             <Selection value="false">
-                <SingleValue>no</SingleValue>
+                <SingleValue>no,n</SingleValue>
             </Selection>
         </Answer>
     </Rule>
@@ -26,10 +26,10 @@
         <Question>Do you prefer helicopters or airplanes?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue>helis,helos,helicopters,choppers</MultipleValue>
+                <MultipleValue>helis,helos,helicopters,choppers,h</MultipleValue>
             </Selection>
             <Selection value="false">
-                <MultipleValue>airplanes,fighters,jets,bombers</MultipleValue>
+                <MultipleValue>airplanes,fighters,jets,bombers,planes,plane,p</MultipleValue>
             </Selection>
         </Answer>
     </Rule>
